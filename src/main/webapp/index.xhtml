@@ -1,0 +1,17 @@
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:body>
+    <h1>CDI-Event-Example</h1>
+    <h:form>
+        <h:commandButton value="Event 1 feuern" action="#{trigger1.fire()}" />
+        <h:commandButton value="Event 2 feuern" action="#{trigger2.fire()}" />
+        <p>Ob die Events gefeuert wurden, erkennt man im Server-Log.</p>
+        <h2>LOG:</h2>
+        <p>
+            <c:forEach items="#{logBean.events}" var="e">
+                <h:outputText value="#{e}" /><br />
+            </c:forEach>
+        </p>
+    </h:form>
+</h:body>
+</html>
