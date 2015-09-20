@@ -12,12 +12,12 @@ import de.heckenmann.cdieventexample.MeinEvent;
 public class Trigger2 {
 
     @Inject
-    private Event<MeinEvent> events;
+    private Event<MeinEvent> event;
 
     /**
      * Nach dem Erstellen wird das Event gefeuert.
      */
     public void fire() {
-        this.events.fire(new MeinEvent(Trigger2.class.getCanonicalName()));
+        this.event.fire(new MeinEvent(Trigger2.class.getCanonicalName()));
     }
 }
